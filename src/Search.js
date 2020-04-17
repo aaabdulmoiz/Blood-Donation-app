@@ -87,7 +87,9 @@ export default class Search extends Component {
             <option value="O-">O-</option>
           </select>
           />
-          <DivButton onClick={this.submitHandler}>Search</DivButton>
+          <div>
+            <DivButton onClick={this.submitHandler}>Search</DivButton>
+          </div>
           <div>
             <ul>
               {this.state.Donors.map(arr => (
