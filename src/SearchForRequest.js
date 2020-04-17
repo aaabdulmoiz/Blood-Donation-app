@@ -54,28 +54,7 @@ class SearchForRequest extends Component {
         <DivT>
           <DivHead>People with Uncompleted Status</DivHead>
           <div>
-            <table style={{ width: "100%" }}>
-              <tr>
-                <th>Id</th>
-                <th>BloodTag</th>
-                <th>Location</th>
-                <th>DnCount</th>
-              </tr>
-              <tr>
-                <td>
-                  <Req req={this.state.reqProfile} />
-                </td>
-                <td>
-                  <Req req={this.state.reqProfile} />
-                </td>
-                <td>
-                  <Req req={this.state.reqProfile} />
-                </td>
-                <td>
-                  <Req req={this.state.reqProfile} />
-                </td>
-              </tr>
-            </table>
+            <Req req={this.state.reqProfile} />
           </div>
         </DivT>
       </Total>
