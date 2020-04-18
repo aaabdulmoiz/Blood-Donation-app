@@ -41,14 +41,14 @@ export default class Search extends Component {
 
     this.state = {
       Donors: [],
-      BloodTag: ""
+      BloodTag: "",
     };
     this.handlechange = this.handlechange.bind(this);
     this.submitHandler = this.submitHandler.bind(this);
   }
   handlechange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
   submitHandler() {
@@ -56,11 +56,11 @@ export default class Search extends Component {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        BloodTag: this.state.BloodTag
-      })
+        BloodTag: this.state.BloodTag,
+      }),
     })
-      .then(res => res.json())
-      .then(arr => this.setState({ Donors: arr }));
+      .then((res) => res.json())
+      .then((arr) => this.setState({ Donors: arr }));
   }
 
   render() {
@@ -92,10 +92,11 @@ export default class Search extends Component {
           </div>
           <div>
             <ul>
-              {this.state.Donors.map(arr => (
-                <li key={arr.BloodrequestID}>
+              {this.state.Donors.map((arr) => (
+                <div key={arr.BloodrequestID}>
                   {arr.BloodTag} {arr.Location} {arr.Cause} {arr.Dateofrequest}
-                </li>
+                  {"    "}
+                </div>
               ))}
             </ul>
           </div>

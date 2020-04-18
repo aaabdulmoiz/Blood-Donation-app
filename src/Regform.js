@@ -10,14 +10,14 @@ class Regform extends Component {
       Email: "",
       Password: "",
       ContactNo: "",
-      BloodTag: ""
+      BloodTag: "",
     };
     this.handlechange = this.handlechange.bind(this);
     this.submitHandler = this.submitHandler.bind(this);
   }
   handlechange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
   submitHandler() {
@@ -30,8 +30,8 @@ class Regform extends Component {
         Email: this.state.Email,
         Password: this.state.Password,
         ContactNo: this.state.ContactNo,
-        BloodTag: this.state.BloodTag
-      })
+        BloodTag: this.state.BloodTag,
+      }),
     });
   }
 

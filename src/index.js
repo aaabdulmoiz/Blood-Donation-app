@@ -4,9 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 //import SearchForRequest from "./SearchForRequest";
-import AddHospitals from "./AddHospital";
+//import AddHospitals from "./AddHospital";
+import Reqform from "./Reqform";
+//import Search from "./Search";
 
-ReactDOM.render(<AddHospitals />, document.getElementById("root"));
+ReactDOM.render(<Reqform />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
