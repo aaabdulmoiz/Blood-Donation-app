@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "@emotion/styled";
 import Req from "./components/Req";
+import "./Seac.css";
 import axios from "axios";
 
 const Total = styled.div`

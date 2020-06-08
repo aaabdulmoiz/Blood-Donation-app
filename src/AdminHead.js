@@ -5,17 +5,17 @@ function Header() {
   return (
     <header style={hstyle}>
       <h1>Admin Panel</h1>
-      <Link to="/" style={lStyle}>
+      <Link to="/adminhome" style={lStyle}>
         Home
       </Link>
       <Link to="/adminreq" style={lStyle}>
         Request
       </Link>
+      <Link to="/" style={lStyle} onClick={() => localStorage.clear("tok")}>
+        LogOut
+      </Link>
       <Link to="/adminuser" style={lStyle}>
         User
-      </Link>
-      <Link to="/adminusertype" style={lStyle}>
-        User Type
       </Link>
     </header>
   );

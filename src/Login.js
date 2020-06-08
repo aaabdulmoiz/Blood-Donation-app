@@ -6,14 +6,14 @@ class Login extends Component {
     this.state = {
       Email: "",
       Password: "",
-      status: ""
+      status: "",
     };
     this.handlechange = this.handlechange.bind(this);
     this.submitHandler = this.submitHandler.bind(this);
   }
   handlechange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
   submitHandler() {
@@ -22,11 +22,11 @@ class Login extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         Email: this.state.Email,
-        Password: this.state.Password
-      })
+        Password: this.state.Password,
+      }),
     })
-      .then(res => res.text())
-      .then(res => this.setState({ status: res }));
+      .then((res) => res.text())
+      .then((res) => this.setState({ status: res }));
   }
 
   render() {
@@ -157,6 +157,7 @@ class Login extends Component {
         {this.state.status}
         {this.state.Email}
         {this.state.Password}
+        {localStorage.getItem("tok")}
       </div>
     );
   }
