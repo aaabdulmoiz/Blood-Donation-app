@@ -1,43 +1,62 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
+import "./new.css";
 
 class NavUser extends Component {
+  state = {
+    name: localStorage.getItem("username"),
+  };
   render() {
     return (
       <div>
-        <header style={hstyle}>
-          <h1>BloodBank</h1>
-          <Link to={{ pathname: "/search" }} style={lStyle}>
-            Search Requests
-          </Link>
-          <Link to="/YourReq" style={lStyle}>
-            Your Request
-          </Link>
-          <Link to="/Reqform" style={lStyle}>
-            Place Request
-          </Link>
-          <Link to="/" style={lStyle}>
-            Logout
-          </Link>
-        </header>
+        <div>
+          <nav>
+            <div id="logo" style={{ color: "#FFF" }}>
+              <img src="/unnamed.png" />
+              BloodBank
+            </div>
+            <label htmlFor="drop" className="toggle">
+              Menu
+            </label>
+            <input type="checkbox" id="drop" />
+            <ul className="menu">
+              <li style={{ border: "0px solid" }}>
+                <Link to="/user">Home</Link>
+              </li>
+              <li>
+                <Link to="/YourReq">Your Requests</Link>
+              </li>
+              <li>
+                <Link to="/search">Blood Requests</Link>
+              </li>
+              <li>
+                <Link to="/Reqform">Find Blood</Link>
+              </li>
+              <li>
+                {/* First Tier Drop Down */}
+                <label htmlFor="drop-1" className="toggle">
+                  {this.state.name}
+                </label>
+                <Link to="/profile">{this.state.name}</Link>
+                <input type="checkbox" id="drop-1" />
+                <ul>
+                  <li>
+                    <Link to="/updateprofile">Edit Profile</Link>
+                  </li>
+                  <li>
+                    {" "}
+                    <Link to="/" onClick={() => localStorage.clear("tok")}>
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     );
   }
 }
-
-const hstyle = {
-  background: "#333",
-  color: "#fff",
-  textAlign: "Center",
-  padding: "10px",
-  height: "120px",
-};
-
-const lStyle = {
-  color: "#fff",
-  padding: "10px",
-  textAlign: "right",
-};
 
 export default NavUser;

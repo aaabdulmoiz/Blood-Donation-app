@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
-import NavUser from "./NavUser";
+import NavUser from "./Navnew";
 
 class YourRequest extends Component {
   constructor(props) {
@@ -79,7 +78,11 @@ class YourRequest extends Component {
               <div className="container">
                 <table
                   className="table table-striped table-hover"
-                  style={{ "text-align": "center", tableLayout: "fixed" }}
+                  style={{
+                    "text-align": "center",
+                    tableLayout: "fixed",
+                    "font-size": "14px",
+                  }}
                 >
                   <thead>
                     <tr>

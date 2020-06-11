@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import NavUser from "./NavUser";
+import NavUser from "./Navnew";
 import "./Seac.css";
 
 class SearchForRequests extends Component {
@@ -95,7 +95,10 @@ class SearchForRequests extends Component {
           </div>
         </div>
         ;
-        <div className="d-flex justify-content-center h-100">
+        <div
+          className="d-flex justify-content-center h-100"
+          style={{ padding: "0px !important" }}
+        >
           <ul>
             <div className="container">
               <table
@@ -104,14 +107,16 @@ class SearchForRequests extends Component {
               >
                 <thead>
                   <tr style={{ "font-size": "15px" }}>
-                    <th>BloodTag</th>
+                    <th>Blood</th>
                     <th>Location</th>
                     <th>Donor Count</th>
                     <th>Blood / Components</th>
                     <th>Details</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody
+                  style={{ "font-size": "medium", padding: "0px !important" }}
+                >
                   {this.state.Donors.map((arr) => (
                     <tr key={arr.BloodrequestID}>
                       <td>{arr.BloodTag}</td>
