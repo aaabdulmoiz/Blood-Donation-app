@@ -1,2 +1,2 @@
 # Blood-donation
- demoProject
+Fron-end code for the web development Project.
