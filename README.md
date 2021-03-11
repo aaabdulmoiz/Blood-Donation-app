@@ -1,2 +1,2 @@
 # Blood-donation
-Fron-end code for the web development Project.
+Front-end code for the web development Project.
